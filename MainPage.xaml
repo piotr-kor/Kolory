@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kolory.MainPage"
+             BackgroundColor="#FFF8DC">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+            <Border
+                x:Name="DuzyProstokat"
+                BackgroundColor="White"
+                HeightRequest="150"
+                StrokeThickness="0" />
+
+            <Label
+                Text="Dobierz kolor suwakami i zapisz przyciskiem:"
+                FontSize="18" />
+            <!-- Suwak R -->
+            <Grid ColumnDefinitions="30,*,45">
+                <Label 
+                    Text="R" 
+                    VerticalOptions="Center"/>
+                <Slider x:Name="SuwakR"
+                    Grid.Column="1"
+                    Minimum="0"
+                    Maximum="255"
+                    Value="255"
+                    ValueChanged="Suwak_ValueChanged"/>
+                <Label 
+                    x:Name="WartoscR"
+                    Grid.Column="2"
+                    Text="255"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </Grid>
+
+            <!-- Suwak G -->
+            <Grid ColumnDefinitions="30,*,45">
+                <Label 
+                    Text="G" 
+                    VerticalOptions="Center"/>
+                <Slider 
+                    x:Name="SuwakG"
+                    Grid.Column="1"
+                    Minimum="0"
+                    Maximum="255"
+                    MinimumTrackColor="LightGray"
+                    Value="255"
+                    ValueChanged="Suwak_ValueChanged"/>
+                <Label 
+                    x:Name="WartoscG"
+                    Grid.Column="2"
+                    Text="255"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </Grid>
+
+            <!-- Suwak B -->
+            <Grid ColumnDefinitions="30,*,45">
+                <Label 
+                    Text="B" 
+                    VerticalOptions="Center"/>
+                <Slider 
+                    x:Name="SuwakB"
+                    Grid.Column="1"
+                    Minimum="0"
+                    Maximum="255"
+                    Value="255"
+                    ValueChanged="Suwak_ValueChanged"/>
+                <Label 
+                    x:Name="WartoscB"
+                    Grid.Column="2"
+                    Text="255"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </Grid>
+
+            <Button
+                Text="Pobierz"
+                BackgroundColor="#CD853F"
+                TextColor="Black"
+                Clicked="Pobierz_Clicked"
+                HorizontalOptions="Center"
+                WidthRequest="150"/>
+
+            <Border
+                x:Name="MalyProstokat"
+                BackgroundColor="White"
+                HeightRequest="40"
+                WidthRequest="150"
+                StrokeThickness="0">
+
+                <Label
+                    x:Name="Wynik"
+                    Text=""
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    TextColor="Black"/>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
